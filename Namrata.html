@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<!--
+  ================= QUICK EDIT GUIDE =================
+  1. Search "Your Name"          -> replace with your real name
+  2. Search "your.email@"        -> replace with your real email
+  3. Search "EDU-ITEM"           -> replace education entries (now 4 parts)
+  4. Search "EXP-ITEM"           -> replace experience/internship entries
+  5. Search "PROJECT-CARD"       -> replace each project's title/brief/image/links
+  6. Search "skill-row"          -> edit the Skills section names/percentages
+  7. Search "TOOL-ITEM"          -> edit the Tools chips (icon + label)
+  8. Search "SOCIAL-LINKS"       -> replace href="#" with your real profile URLs
+  9. Search "resume.pdf"         -> put your actual resume file next to this HTML
+     file and keep the same name, or change the filename here
+  10. Profile picture: NOT clickable on the live page anymore (so visitors
+      can't change it). Instead, search "PROFILE_PHOTO_URL" near the top of
+      the <script> section and paste your image URL or file path there.
+  11. Light/dark toggle is the switch in the top-right of the nav bar. It
+      resets to dark on page reload since no browser storage is used here.
+  12. Portfolio Assistant (bottom-left chat bubble): search
+      "KNOWLEDGE_BASE" in the <script> section to edit what it knows and
+      how it replies — it answers from that list, no external API needed.
+  =====================================================
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Namrata Pise Portfolio</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjMDBmNmZmIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMC41IiBzdG9wLWNvbG9yPSIjOGI1Y2Y2Ii8+CiAgICAgIDxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2ZmM2VjOCIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICAgIDxmaWx0ZXIgaWQ9Imdsb3ciIHg9Ii02MCUiIHk9Ii02MCUiIHdpZHRoPSIyMjAlIiBoZWlnaHQ9IjIyMCUiPgogICAgICA8ZmVHYXVzc2lhbkJsdXIgc3RkRGV2aWF0aW9uPSIyLjYiIHJlc3VsdD0iYiIvPgogICAgICA8ZmVNZXJnZT4KICAgICAgICA8ZmVNZXJnZU5vZGUgaW49ImIiLz4KICAgICAgICA8ZmVNZXJnZU5vZGUgaW49IlNvdXJjZUdyYXBoaWMiLz4KICAgICAgPC9mZU1lcmdlPgogICAgPC9maWx0ZXI+CiAgPC9kZWZzPgogIDxyZWN0IHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCIgcng9IjE2IiBmaWxsPSIjMDYwNzBjIi8+CiAgPHBvbHlnb24gcG9pbnRzPSIzMiw1IDU0LDE3LjUgNTQsNDIuNSAzMiw1NSAxMCw0Mi41IDEwLDE3LjUiCiAgICAgICAgICAgZmlsbD0ibm9uZSIgc3Ryb2tlPSJ1cmwoI2cpIiBzdHJva2Utd2lkdGg9IjIuNCIgZmlsdGVyPSJ1cmwoI2dsb3cpIi8+CiAgPHBhdGggZD0iTTM1IDE1IEwyMCAzNSBIMjkgTDI2IDQ5IEw0NSAyNyBIMzQgTDM1IDE1IFoiCiAgICAgICAgZmlsbD0idXJsKCNnKSIgZmlsdGVyPSJ1cmwoI2dsb3cpIi8+Cjwvc3ZnPgo=">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #06070c;
+    --bg-panel: #0b0e17;
+    --bg-panel-2: #10141f;
+    --line: #1c2130;
+    --text: #e9edf5;
+    --muted: #8892a6;
+    --cyan: #00f6ff;
+    --magenta: #ff3ec8;
+    --violet: #8b5cf6;
+    --glow-cyan: 0 0 6px rgba(0,246,255,.9), 0 0 22px rgba(0,246,255,.45), 0 0 44px rgba(0,246,255,.2);
+    --glow-magenta: 0 0 6px rgba(255,62,200,.9), 0 0 22px rgba(255,62,200,.45), 0 0 44px rgba(255,62,200,.2);
+    --radius: 14px;
+  }
+
+  /* ---------- LIGHT THEME OVERRIDES ---------- */
+  html[data-theme="light"]{
+    --bg: #f4f5fa;
+    --bg-panel: #ffffff;
+    --bg-panel-2: #eef0f8;
+    --line: #dde1ec;
+    --text: #14151f;
+    --muted: #5b6274;
+    --cyan: #0090a8;
+    --magenta: #c81a97;
+    --violet: #6d28d9;
+    --glow-cyan: 0 0 4px rgba(0,144,168,.55), 0 0 14px rgba(0,144,168,.28);
+    --glow-magenta: 0 0 4px rgba(200,26,151,.55), 0 0 14px rgba(200,26,151,.28);
+  }
+  html[data-theme="light"] body{
+    background:
+      radial-gradient(1100px 550px at 15% -10%, rgba(109,40,217,.08), transparent 60%),
+      radial-gradient(900px 500px at 100% 10%, rgba(0,144,168,.07), transparent 55%),
+      var(--bg);
+  }
+  html[data-theme="light"] .btn-primary{color:#fff;}
+  html[data-theme="light"] .field input,
+  html[data-theme="light"] .field textarea{background:#f6f7fb;}
+  html[data-theme="light"] .project-thumb::after{background:linear-gradient(180deg,transparent 55%, rgba(20,21,31,.55));}
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:
+      radial-gradient(1100px 550px at 15% -10%, rgba(139,92,246,.16), transparent 60%),
+      radial-gradient(900px 500px at 100% 10%, rgba(0,246,255,.10), transparent 55%),
+      var(--bg);
+    color:var(--text);
+    font-family:'Inter',sans-serif;
+    line-height:1.6;
+    overflow-x:hidden;
+    transition:background .4s ease, color .4s ease;
+  }
+  h1,h2,h3,.brand,.logo-mark{font-family:'Orbitron',sans-serif;}
+  a{color:inherit;text-decoration:none;}
+  ul{list-style:none;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 28px;}
+  ::selection{background:var(--magenta);color:#05060a;}
+
+  /* ---------- scrollbar ---------- */
+  ::-webkit-scrollbar{width:9px;}
+  ::-webkit-scrollbar-track{background:var(--bg);}
+  ::-webkit-scrollbar-thumb{background:linear-gradient(var(--cyan),var(--magenta));border-radius:10px;}
+
+  /* ---------- NAV ---------- */
+  header.nav{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    backdrop-filter: blur(14px);
+    background:rgba(6,7,12,.55);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:16px 28px;max-width:1160px;margin:0 auto;}
+  .brand{font-size:1.05rem;font-weight:700;letter-spacing:2px;color:var(--text);}
+  .brand span{color:var(--cyan);text-shadow:var(--glow-cyan);}
+  .nav-links{display:flex;gap:34px;font-size:.85rem;letter-spacing:.5px;}
+  .nav-links a{color:var(--muted);position:relative;padding:4px 0;transition:color .25s;}
+  .nav-links a:hover{color:var(--text);}
+  .nav-links a::after{
+    content:'';position:absolute;left:0;bottom:-2px;width:0;height:2px;
+    background:linear-gradient(90deg,var(--cyan),var(--magenta));
+    box-shadow:var(--glow-cyan);
+    transition:width .3s;
+  }
+  .nav-links a:hover::after{width:100%;}
+  .nav-toggle{display:none;background:none;border:1px solid var(--line);border-radius:8px;color:var(--text);width:40px;height:40px;font-size:1.1rem;cursor:pointer;}
+  .nav-right{display:flex;align-items:center;gap:14px;}
+
+  .theme-toggle{
+    position:relative;width:52px;height:28px;border-radius:100px;cursor:pointer;
+    background:var(--bg-panel-2);border:1px solid var(--line);flex-shrink:0;
+  }
+  .theme-toggle .knob{
+    position:absolute;top:2px;left:2px;width:22px;height:22px;border-radius:50%;
+    background:linear-gradient(135deg,var(--cyan),var(--violet));box-shadow:var(--glow-cyan);
+    display:flex;align-items:center;justify-content:center;font-size:.7rem;
+    transition:left .3s ease;
+  }
+  html[data-theme="light"] .theme-toggle .knob{left:26px;}
+
+  .scroll-progress{
+    position:fixed;top:0;left:0;height:3px;width:0%;z-index:200;
+    background:linear-gradient(90deg,var(--cyan),var(--violet),var(--magenta));
+    box-shadow:var(--glow-cyan);
+    transition:width .1s linear;
+  }
+
+  .back-to-top{
+    position:fixed;right:26px;bottom:26px;z-index:90;
+    width:46px;height:46px;border-radius:50%;
+    background:var(--bg-panel);border:1px solid var(--cyan);color:var(--cyan);
+    display:flex;align-items:center;justify-content:center;font-size:1.1rem;cursor:pointer;
+    box-shadow:var(--glow-cyan);
+    opacity:0;pointer-events:none;transform:translateY(12px);
+    transition:opacity .3s, transform .3s;
+  }
+  .back-to-top.show{opacity:1;pointer-events:auto;transform:translateY(0);}
+
+  /* ---------- AI ASSISTANT WIDGET ---------- */
+  .ai-toggle{
+    position:fixed;left:26px;bottom:26px;z-index:95;
+    width:58px;height:58px;border-radius:50%;
+    background:linear-gradient(135deg,var(--cyan),var(--violet),var(--magenta));
+    display:flex;align-items:center;justify-content:center;
+    font-size:1.4rem;cursor:pointer;border:none;color:#04050a;
+    box-shadow:0 0 26px rgba(0,246,255,.45);
+    transition:transform .25s;
+  }
+  .ai-toggle:hover{transform:scale(1.08);}
+  .ai-toggle .ping{
+    position:absolute;inset:-4px;border-radius:50%;border:1.5px solid var(--cyan);
+    animation:ping 2.4s ease-out infinite;
+  }
+  @keyframes ping{0%{opacity:.7;transform:scale(1);}100%{opacity:0;transform:scale(1.35);}}
+
+  .ai-panel{
+    position:fixed;left:26px;bottom:96px;z-index:96;
+    width:340px;max-width:calc(100vw - 52px);height:460px;max-height:70vh;
+    background:linear-gradient(180deg,var(--bg-panel),var(--bg-panel-2));
+    border:1px solid var(--line);border-radius:16px;
+    display:flex;flex-direction:column;overflow:hidden;
+    box-shadow:0 20px 50px rgba(0,0,0,.45), 0 0 30px rgba(0,246,255,.08);
+    transform:translateY(16px) scale(.97);opacity:0;pointer-events:none;
+    transition:opacity .25s, transform .25s;
+  }
+  .ai-panel.open{transform:translateY(0) scale(1);opacity:1;pointer-events:auto;}
+  .ai-head{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:14px 16px;border-bottom:1px solid var(--line);
+    background:rgba(0,246,255,.03);
+  }
+  .ai-head-title{display:flex;align-items:center;gap:10px;font-size:.92rem;font-weight:600;}
+  .ai-head-title .dot{width:8px;height:8px;border-radius:50%;background:var(--cyan);box-shadow:var(--glow-cyan);animation:pulse 1.8s infinite;}
+  .ai-close{background:none;border:none;color:var(--muted);font-size:1.1rem;cursor:pointer;}
+  .ai-close:hover{color:var(--text);}
+  .ai-messages{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:12px;}
+  .ai-msg{max-width:85%;padding:10px 13px;border-radius:12px;font-size:.86rem;line-height:1.5;}
+  .ai-msg.bot{align-self:flex-start;background:var(--bg-panel-2);border:1px solid var(--line);border-bottom-left-radius:2px;}
+  .ai-msg.user{align-self:flex-end;background:linear-gradient(135deg,var(--cyan),var(--violet));color:#04050a;border-bottom-right-radius:2px;}
+  .ai-suggestions{display:flex;flex-wrap:wrap;gap:8px;padding:0 16px 12px;}
+  .ai-chip{
+    font-size:.72rem;padding:6px 11px;border-radius:100px;border:1px solid var(--line);
+    color:var(--muted);cursor:pointer;background:none;transition:.2s;
+  }
+  .ai-chip:hover{border-color:var(--cyan);color:var(--text);box-shadow:var(--glow-cyan);}
+  .ai-input-row{display:flex;gap:8px;padding:12px;border-top:1px solid var(--line);}
+  .ai-input-row input{
+    flex:1;background:#0a0d16;border:1px solid var(--line);border-radius:9px;
+    padding:10px 12px;color:var(--text);font-family:'Inter',sans-serif;font-size:.85rem;
+  }
+  .ai-input-row input:focus{outline:none;border-color:var(--cyan);}
+  .ai-send{
+    width:40px;height:40px;border-radius:9px;border:none;flex-shrink:0;
+    background:linear-gradient(135deg,var(--cyan),var(--violet));color:#04050a;
+    font-size:1rem;cursor:pointer;
+  }
+  html[data-theme="light"] .ai-input-row input{background:#f6f7fb;}
+  @media(max-width:480px){
+    .ai-panel{left:12px;right:12px;width:auto;bottom:88px;}
+    .ai-toggle{left:16px;}
+  }
+
+  @media(max-width:760px){
+    .nav-links{
+      position:fixed;top:64px;left:0;right:0;background:var(--bg-panel);
+      flex-direction:column;gap:0;padding:6px 0;border-bottom:1px solid var(--line);
+      transform:translateY(-140%);transition:transform .35s ease;
+    }
+    .nav-links.open{transform:translateY(0);}
+    .nav-links a{padding:14px 28px;width:100%;display:block;}
+    .nav-toggle{display:block;}
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    min-height:100vh;display:flex;align-items:center;
+    padding:150px 0 90px;position:relative;
+  }
+  .hero-inner{display:flex;align-items:center;gap:60px;flex-wrap:wrap;}
+  .hero-text{flex:1 1 380px;}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:.75rem;letter-spacing:3px;text-transform:uppercase;color:var(--cyan);
+    border:1px solid rgba(0,246,255,.35);padding:6px 14px;border-radius:100px;
+    box-shadow:inset 0 0 12px rgba(0,246,255,.08);margin-bottom:22px;
+  }
+  .eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--cyan);box-shadow:var(--glow-cyan);animation:pulse 1.8s infinite;}
+  @keyframes pulse{0%,100%{opacity:1;}50%{opacity:.35;}}
+  .hero h1{font-size:clamp(2.3rem,6vw,4.1rem);font-weight:900;line-height:1.08;margin-bottom:18px;}
+  .hero h1 .glow{
+    background:linear-gradient(90deg,var(--cyan),var(--violet) 55%,var(--magenta));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    filter:drop-shadow(0 0 18px rgba(139,92,246,.35));
+  }
+  .hero p.role{font-size:1.15rem;color:var(--muted);margin-bottom:26px;max-width:520px;}
+  .hero-cta{display:flex;gap:16px;flex-wrap:wrap;}
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;
+    padding:13px 26px;border-radius:10px;font-size:.9rem;font-weight:600;letter-spacing:.4px;
+    cursor:pointer;border:1px solid transparent;transition:transform .2s, box-shadow .2s;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .btn-primary{
+    background:linear-gradient(90deg,var(--cyan),var(--violet));
+    color:#04050a;box-shadow:0 0 24px rgba(0,246,255,.35);
+  }
+  .btn-primary:hover{box-shadow:0 0 34px rgba(0,246,255,.55);}
+  .btn-outline{
+    border:1px solid rgba(255,62,200,.5);color:var(--text);
+    box-shadow: inset 0 0 14px rgba(255,62,200,.06);
+  }
+  .btn-outline:hover{box-shadow: inset 0 0 14px rgba(255,62,200,.15), var(--glow-magenta);}
+
+  /* avatar — unique hexagonal neon frame with orbiting accent dots */
+  .avatar-wrap{position:relative;width:260px;height:260px;flex-shrink:0;margin:0 auto;}
+  .hex-shape{ clip-path: polygon(50% 2%, 95% 26%, 95% 74%, 50% 98%, 5% 74%, 5% 26%); }
+  .avatar-frame{
+    position:absolute;inset:0;
+    background:conic-gradient(from 0deg, var(--cyan), var(--violet), var(--magenta), var(--cyan));
+    animation:spin 10s linear infinite;
+  }
+  @keyframes spin{to{transform:rotate(360deg);}}
+  .avatar-frame-glow{
+    position:absolute;inset:-6px;
+    background:conic-gradient(from 0deg, var(--cyan), var(--violet), var(--magenta), var(--cyan));
+    filter:blur(14px);opacity:.55;
+    animation:spin 10s linear infinite;
+  }
+  .avatar{
+    position:absolute;inset:7px;
+    background:var(--bg-panel-2);
+    overflow:hidden;
+    display:flex;align-items:center;justify-content:center;
+    z-index:2;
+  }
+  .avatar img{width:100%;height:100%;object-fit:cover;display:none;}
+  .avatar.has-photo img{display:block;}
+  .avatar.has-photo .avatar-placeholder{display:none;}
+  .avatar-placeholder{color:var(--muted);font-size:2.4rem;text-align:center;letter-spacing:.5px;font-family:'Orbitron',sans-serif;}
+
+  .orbit{position:absolute;inset:-22px;border-radius:50%;pointer-events:none;animation:spin 7s linear infinite;z-index:3;}
+  .orbit .dot{position:absolute;top:0;left:50%;width:11px;height:11px;border-radius:50%;transform:translate(-50%,-50%);}
+  .orbit-1 .dot{background:var(--cyan);box-shadow:var(--glow-cyan);}
+  .orbit-2{inset:-38px;animation-duration:11s;animation-direction:reverse;}
+  .orbit-2 .dot{background:var(--magenta);box-shadow:var(--glow-magenta);width:8px;height:8px;}
+  .orbit-3{inset:-8px;animation-duration:5s;}
+  .orbit-3 .dot{background:var(--violet);box-shadow:0 0 6px rgba(139,92,246,.9),0 0 16px rgba(139,92,246,.5);width:7px;height:7px;top:auto;bottom:0;left:50%;}
+
+  /* ---------- SECTION shared ---------- */
+  section{padding:110px 0;position:relative;}
+  .section-head{margin-bottom:52px;text-align:center;}
+  .section-head .tag{font-size:.75rem;letter-spacing:3px;text-transform:uppercase;color:var(--magenta);text-shadow:var(--glow-magenta);}
+  .section-head h2{font-size:clamp(1.7rem,4vw,2.4rem);margin-top:10px;}
+  .section-head p{color:var(--muted);max-width:520px;margin:14px auto 0;}
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in{opacity:1;transform:translateY(0);}
+
+  /* ---------- EDUCATION ---------- */
+  .timeline{position:relative;max-width:760px;margin:0 auto;padding-left:30px;}
+  .timeline::before{
+    content:'';position:absolute;left:6px;top:6px;bottom:6px;width:2px;
+    background:linear-gradient(var(--cyan),var(--violet),var(--magenta));
+    box-shadow:var(--glow-cyan);
+  }
+  .edu-item{position:relative;padding:0 0 42px 34px;}
+  .edu-item:last-child{padding-bottom:0;}
+  .edu-item::before{
+    content:'';position:absolute;left:-4px;top:4px;width:14px;height:14px;border-radius:50%;
+    background:var(--bg);border:2px solid var(--cyan);box-shadow:var(--glow-cyan);
+  }
+  .edu-item .years{font-size:.78rem;letter-spacing:1px;color:var(--cyan);text-transform:uppercase;}
+  .edu-item h3{font-size:1.15rem;margin:6px 0 4px;}
+  .edu-item .school{color:var(--muted);font-size:.92rem;margin-bottom:8px;}
+  .edu-item p.detail{color:var(--muted);font-size:.9rem;max-width:560px;}
+
+  /* ---------- EXPERIENCE ---------- */
+  .exp-list{max-width:800px;margin:0 auto;display:flex;flex-direction:column;gap:22px;}
+  .exp-card{
+    display:grid;grid-template-columns:150px 1fr;gap:26px;
+    background:linear-gradient(180deg,var(--bg-panel),var(--bg-panel-2));
+    border:1px solid var(--line);border-radius:var(--radius);padding:26px 28px;
+    transition:border-color .3s, transform .3s;
+  }
+  .exp-card:hover{border-color:rgba(255,62,200,.4);transform:translateX(4px);}
+  .exp-period{font-size:.8rem;color:var(--magenta);letter-spacing:.5px;text-shadow:var(--glow-magenta);}
+  .exp-content h3{font-size:1.1rem;margin-bottom:2px;}
+  .exp-content .company{color:var(--cyan);font-size:.88rem;margin-bottom:10px;}
+  .exp-content ul{display:flex;flex-direction:column;gap:6px;}
+  .exp-content li{position:relative;padding-left:16px;color:var(--muted);font-size:.9rem;}
+  .exp-content li::before{content:'▸';position:absolute;left:0;color:var(--cyan);}
+  @media(max-width:620px){.exp-card{grid-template-columns:1fr;}}
+
+  /* ---------- SKILLS ---------- */
+  .skills-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px 40px;max-width:820px;margin:0 auto;}
+  @media(max-width:640px){.skills-grid{grid-template-columns:1fr;}}
+  .skill-row{}
+  .skill-top{display:flex;justify-content:space-between;font-size:.88rem;margin-bottom:8px;}
+  .skill-top span:last-child{color:var(--cyan);}
+  .skill-bar{height:8px;border-radius:100px;background:var(--bg-panel-2);border:1px solid var(--line);overflow:hidden;}
+  .skill-fill{
+    height:100%;border-radius:100px;width:0%;
+    background:linear-gradient(90deg,var(--cyan),var(--violet),var(--magenta));
+    box-shadow:var(--glow-cyan);
+    transition:width 1.1s cubic-bezier(.16,1,.3,1);
+  }
+
+  /* ---------- TOOLS ---------- */
+  .tools-grid{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));
+    gap:18px;max-width:820px;margin:0 auto;
+  }
+  .tool-chip{
+    background:linear-gradient(180deg,var(--bg-panel),var(--bg-panel-2));
+    border:1px solid var(--line);border-radius:14px;
+    padding:22px 10px;display:flex;flex-direction:column;align-items:center;gap:10px;
+    transition:transform .3s ease, border-color .3s, box-shadow .3s;
+  }
+  .tool-chip:hover{transform:translateY(-6px);border-color:rgba(0,246,255,.5);box-shadow:0 14px 30px rgba(0,246,255,.15);}
+  .tool-icon{
+    font-size:1.5rem;width:52px;height:52px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    background:var(--bg-panel-2);border:1px solid var(--line);
+    transition:box-shadow .3s, border-color .3s;
+  }
+  .tool-chip:hover .tool-icon{box-shadow:var(--glow-cyan);border-color:var(--cyan);}
+  .tool-chip span{font-size:.8rem;color:var(--muted);transition:color .3s;}
+  .tool-chip:hover span{color:var(--text);}
+
+  /* ---------- PROJECTS ---------- */
+  .projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+  @media(max-width:900px){.projects-grid{grid-template-columns:1fr;}}
+  .project-card{
+    background:linear-gradient(180deg,var(--bg-panel),var(--bg-panel-2));
+    border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;
+    transition:transform .3s, box-shadow .3s, border-color .3s;
+    display:flex;flex-direction:column;
+  }
+  .project-card:hover{transform:translateY(-8px);border-color:rgba(0,246,255,.4);box-shadow:0 18px 40px rgba(0,246,255,.12);}
+  .project-thumb{
+    height:170px;position:relative;overflow:hidden;
+    background:#0d1120;
+  }
+  .project-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .5s;}
+  .project-card:hover .project-thumb img{transform:scale(1.06);}
+  .project-thumb::after{
+    content:'';position:absolute;inset:0;
+    background:linear-gradient(180deg,transparent 55%, rgba(6,7,12,.85));
+  }
+  .project-body{padding:22px 22px 24px;flex:1;display:flex;flex-direction:column;}
+  .project-body h3{font-size:1.05rem;margin-bottom:8px;}
+  .project-body p{color:var(--muted);font-size:.88rem;flex:1;margin-bottom:16px;}
+  .tag-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;}
+  .tag-row span{
+    font-size:.7rem;padding:4px 10px;border-radius:100px;
+    border:1px solid var(--line);color:var(--muted);letter-spacing:.4px;
+  }
+  .project-links{display:flex;gap:16px;font-size:.82rem;}
+  .project-links a{color:var(--cyan);display:flex;align-items:center;gap:6px;}
+  .project-links a:hover{text-shadow:var(--glow-cyan);}
+
+  /* ---------- CONTACT ---------- */
+  .contact-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:50px;align-items:flex-start;}
+  @media(max-width:860px){.contact-grid{grid-template-columns:1fr;}}
+  .contact-info h3{font-size:1.3rem;margin-bottom:14px;}
+  .contact-info p{color:var(--muted);margin-bottom:26px;max-width:400px;}
+  .info-line{display:flex;align-items:center;gap:14px;margin-bottom:18px;font-size:.92rem;}
+  .info-icon{
+    width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;
+    border:1px solid rgba(0,246,255,.35);color:var(--cyan);box-shadow:inset 0 0 10px rgba(0,246,255,.08);
+    flex-shrink:0;
+  }
+  .social-row{display:flex;gap:14px;margin-top:30px;}
+  .social-icon{
+    width:46px;height:46px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    border:1px solid var(--line);color:var(--muted);
+    transition:all .28s;
+  }
+  .social-icon svg{width:20px;height:20px;}
+  .social-icon:hover{
+    color:var(--bg);
+    background:linear-gradient(135deg,var(--cyan),var(--magenta));
+    box-shadow:var(--glow-magenta);
+    transform:translateY(-4px);
+    border-color:transparent;
+  }
+
+  form.neon-form{
+    background:linear-gradient(180deg,var(--bg-panel),var(--bg-panel-2));
+    border:1px solid var(--line);border-radius:var(--radius);
+    padding:32px;position:relative;
+  }
+  form.neon-form::before{
+    content:'';position:absolute;inset:0;border-radius:var(--radius);padding:1px;
+    background:linear-gradient(120deg,var(--cyan),transparent 30%,transparent 70%,var(--magenta));
+    -webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite:xor;mask-composite:exclude;
+    pointer-events:none;opacity:.55;
+  }
+  .field{margin-bottom:20px;}
+  .field label{display:block;font-size:.78rem;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:8px;}
+  .field input,.field textarea{
+    width:100%;background:#0a0d16;border:1px solid var(--line);border-radius:9px;
+    padding:12px 14px;color:var(--text);font-family:'Inter',sans-serif;font-size:.92rem;
+    transition:border-color .25s, box-shadow .25s;
+  }
+  .field textarea{resize:vertical;min-height:100px;}
+  .field input:focus,.field textarea:focus{
+    outline:none;border-color:var(--cyan);box-shadow:0 0 0 3px rgba(0,246,255,.12);
+  }
+  .form-msg{font-size:.85rem;margin-top:10px;min-height:20px;color:var(--cyan);}
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    border-top:1px solid var(--line);padding:34px 0;text-align:center;color:var(--muted);font-size:.85rem;
+  }
+  footer span{color:var(--cyan);}
+
+  .glow-line{
+    height:1px;width:100%;
+    background:linear-gradient(90deg,transparent,var(--cyan),var(--magenta),transparent);
+    opacity:.5;
+  }
+
+  /* ---------- MODERN TOUCH: cyber grid + cursor spotlight ---------- */
+  .grid-bg{
+    position:fixed;inset:0;z-index:0;pointer-events:none;
+    background-image:
+      linear-gradient(rgba(0,246,255,.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,246,255,.05) 1px, transparent 1px);
+    background-size:44px 44px;
+    -webkit-mask-image:radial-gradient(circle at 50% 0%, black, transparent 78%);
+    mask-image:radial-gradient(circle at 50% 0%, black, transparent 78%);
+  }
+  html[data-theme="light"] .grid-bg{
+    background-image:
+      linear-gradient(rgba(0,0,0,.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,0,0,.05) 1px, transparent 1px);
+  }
+</style>
+</head>
+<body>
+
+<div class="grid-bg"></div>
+
+<header class="nav">
+  <div class="nav-inner">
+    <div class="brand"><span>&lt;</span> Namrata Pise <span>/&gt;</span></div>
+    <nav class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#education">Education</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#tools">Tools</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-right">
+      <div class="theme-toggle" id="themeToggle" title="Toggle light/dark theme">
+        <div class="knob">✦</div>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
+    </div>
+  </div>
+</header>
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="home">
+  <div class="wrap hero-inner">
+    <div class="hero-text reveal in">
+      <div class="eyebrow"><span class="dot"></span> Available for work</div>
+      <h1>Hi, I'm <span class="glow">Namrata Pise</span><br>AIML Engineer &amp; Data Analyst</h1>
+      <p class="role">Dedicated B.Tech AIML (Artificial Intelligence and Machine Learning) student and aspiring engineer with a strong foundation in building smart algorithmic solutions, deep learning models, and data-driven systems..</p>
+      <div class="hero-cta">
+        <a href="Namrata Resume  (1).pdf" target="_blank" download class="btn btn-primary">⬇ Download Resume</a>
+        <a href="#projects" class="btn btn-outline">View Projects</a>
+      </div>
+    </div>
+
+    <div class="avatar-wrap reveal in">
+      <div class="orbit orbit-2"><div class="dot"></div></div>
+      <div class="orbit orbit-1"><div class="dot"></div></div>
+      <div class="avatar-frame-glow hex-shape"></div>
+      <div class="avatar-frame hex-shape"></div>
+      <div class="orbit orbit-3"><div class="dot"></div></div>
+      <div class="avatar hex-shape" id="avatar">
+        <span class="avatar-placeholder" id="avatarPlaceholder">YN</span>
+        <img id="avatarImg" src="" alt="Profile photo">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EDUCATION ================= -->
+<section id="education">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="tag">Background</span>
+      <h2>Education</h2>
+      <p>The foundational curriculum that sharpened my analytical mindset and engineering execution..</p>
+    </div>
+
+    <div class="timeline">
+      <!-- EDU-ITEM 1 -->
+      <div class="edu-item reveal">
+        <div class="years">2024 — Present</div>
+        <h3>B.Tech in CSE (Artificial Intelligence and Machine Learning)</h3>
+        <div class="school"><b>Pr Pote College Of Engineering And Management, Amravati</b> </div>
+        <p class="detail">Focused on core machine learning algorithms, deep learning architecture, and data engineering fundamentals. Built several academic and personal AI projects alongside coursework.</p>
+      </div>
+      <!-- EDU-ITEM 3 -->
+      <div class="edu-item reveal">
+        <div class="years">2022 - 2023</div>
+        <h3>Higher Secondary School</h3>
+        <div class="school"><b>I E S Girls High school, Partwada</b></div>
+        <p class="detail">Completed Higher secondary schooling with distinction, building the foundation for further studies.</p>
+      </div>
+      <!-- EDU-ITEM 4 -->
+      <div class="edu-item reveal">
+        <div class="years">2020 — 2021 </div>
+        <h3>Secondary School</h3>
+        <div class="school"><b>VMV college of Sonapur</b></div>
+        <p class="detail">Completed secondary schooling with distinction, building the foundation for further studies. </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="glow-line"></div></div>
+
+<!-- ================= EXPERIENCE ================= -->
+<section id="experience">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="tag">Career So Far</span>
+      <h2>Internship & Certifications</h2>
+      <p>Certificate and internships where I've applied what I've learned.</p>
+    </div>
+
+    <div class="exp-list">
+      <!-- EXP-ITEM 1 -->
+      <div class="exp-card reveal">
+        <div class="exp-period">7th January 2026</div>
+        <div class="exp-content">
+          <h3> Machine Learning Using Python By Simplilearn</h3>
+          <div class="company"> <a href="ML Python.jpg" target="_blank" >🔗_View Certificate </a> </div> 
+          <ul>
+            <li>Earned a professional certification in applying core machine learning concepts and algorithms using Python. Developed hands-on experience in data preprocessing, exploratory data analysis (EDA), predictive modeling, and evaluating algorithm performance on real-world datasets.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- EXP-ITEM 2 -->
+      <div class="exp-card reveal">
+        <div class="exp-period">Oct - December 2024</div>
+        <div class="exp-content">
+          <h3>AI-ML Virtual Internship By EduSkill</h3>
+          <div class="company"><a href="AIML EduSkill.jpg" target="_blank" >🔗_View Certificate </a></div>
+          <ul>
+            <li>Completed an intensive 10-week virtual internship program organized by EduSkills Foundation and AICTE. Gained hands-on experience in building, training, and deploying Artificial Intelligence and Machine Learning models using Python and industry-standard frameworks.</li>
+          </ul>
+        </div>
+      </div>
+
+       <!-- EXP-ITEM 3 -->
+      <div class="exp-card reveal">
+        <div class="exp-period">January - March 2025</div>
+        <div class="exp-content">
+          <h3>Full Stack Developer Virtual Internship By EduSkill</h3>
+          <div class="company"><a href="Full Stack Eduskill.jpg" target="_blank" >🔗_View Certificate </a></div>
+          <ul>
+            <li>Completed a comprehensive 10-week virtual internship with EduSkills Foundation and AICTE, gaining end-to-end practical experience in full-stack web application development, database architecture, and API design.</li>
+          </ul>
+        </div>
+      </div>
+
+ <!-- EXP-ITEM 4 -->
+      <div class="exp-card reveal">
+        <div class="exp-period">July - September 2025</div>
+        <div class="exp-content">
+          <h3>Android Developer Virtual Internship By EduSkill</h3>
+          <div class="company"><a href="Android Eduskill.jpg" target="_blank" >🔗_View Certificate </a></div>
+          <ul>
+            <li>Completed a comprehensive Google-supported Android Developer Virtual Internship supported by AICTE and EduSkills. Mastered mobile development fundamentals using Kotlin and Android Studio.</li>
+          </ul>
+        </div>
+      </div>
+
+       <!-- EXP-ITEM 5 -->
+      <div class="exp-card reveal">
+        <div class="exp-period">Oct - December 2025</div>
+        <div class="exp-content">
+          <h3>Python Full Stack Developer Virtual Internship By EduSkill</h3>
+          <div class="company"><a href="Python full Stack.jpg" target="_blank" >🔗_View Certificate </a></div>
+          <ul>
+            <li>Completed an intensive Python Full Stack Developer Virtual Internship backed by AICTE and EduSkills. Mastered end-to-end web application development by building responsive frontends with HTML/CSS/JS, engineering robust backend architecture using Python (Django/Flask/FastAPI), and managing relational database persistence with MySQL/SQLAlchemy and Git version control.</li>
+          </ul>
+        </div>
+      </div>
+
+       <!-- EXP-ITEM 6 -->
+      <div class="exp-card reveal">
+        <div class="exp-period">July 15th 2026</div>
+        <div class="exp-content">
+          <h3>Cybersecurity Analyst Job Simulation By Forage</h3>
+          <div class="company"><a href="cybersecurity forage.jpg" target="_blank" >🔗_View Certificate </a></div>
+          <ul>
+            <li>Completed a hands-on Cybersecurity Analyst Virtual Internship simulating real-world Security Operations Center (SOC) workflows. Analyzed security event logs, triaged high-priority alerts using SIEM methodologies, and evaluated network vulnerabilities.</li>
+          </ul>
+        </div>
+      </div>
+
+
+      <!-- E
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="glow-line"></div></div>
+
+<!-- ================= PROJECTS ================= -->
+<section id="projects">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="tag">Selected Work</span>
+      <h2>Projects</h2>
+      <p>A few things I've built recently — replace the images, briefs, and links with your own.</p>
+    </div>
+
+    <div class="projects-grid">
+      <!-- PROJECT-CARD 1 -->
+      <div class="project-card reveal">
+        <div class="project-thumb">
+          <img src="dashboard.png" alt="Project one final output">
+        </div>
+        <div class="project-body">
+          <h3>Smart Meter Installation Progress</h3>
+          <p>Designed and implemented an end-to-end Smart Meter Rollout & Installation Dashboard to track, validate, and report deployment progress across multi-tier geographic hierarchies (Zones, Circles, Divisions, Sub-divisions).</p>
+          <div class="tag-row"><span>Power BI </span><span>SQL</span></div>
+          <div class="project-links">
+            <a href="https://github.com/pisenamrata98-alt/Smart-Meter-Installation-Dashboard#-smart-meter-installation--progress-dashboard" target="_blank"> 🔗 Live Demo</a>
+            <a href="https://github.com/pisenamrata98-alt/Smart-Meter-Installation-Dashboard#-smart-meter-installation--progress-dashboard "target="_blank">💻 GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROJECT-CARD 2 -->
+      <div class="project-card reveal">
+        <div class="project-thumb">
+          <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=600&q=60" alt="Project two final output">
+        </div>
+        <div class="project-body">
+          <h3>E-Commerce UI Kit</h3>
+          <p>A fully responsive online store front-end with cart, filters, and checkout flow — focused on speed, accessibility, and a clean modern look.</p>
+          <div class="tag-row"><span>HTML/CSS</span><span>JavaScript</span><span>Stripe API</span></div>
+          <div class="project-links">
+            <a href="#">🔗 Live Demo</a>
+            <a href="#">💻 GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROJECT-CARD 3 -->
+      <div class="project-card reveal">
+        <div class="project-thumb">
+          <img src="feedback portal.jpeg" alt="Project three final output">
+        </div>
+        <div class="project-body">
+          <h3>Smart Feedback Portal</h3>
+          <p>Developed an intelligent feedback management system featuring automated sentiment analysis, categorization, and a dynamic dashboard for real-time student insights..</p>
+          <div class="tag-row"><span>JavaScript</span><span>API</span><span>CSS Animations</span></div>
+          <div class="project-links">
+            <a href="https://github.com/pisenamrata98-alt/Smart-Feedback-Portal" target="_blank">🔗Live Demo</a>
+            <a href="https://github.com/pisenamrata98-alt/Smart-Feedback-Portal"target="_blank">💻 GitHub</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SKILLS ================= -->
+<section id="skills">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="tag">Expertise</span>
+      <h2>Skills</h2>
+      <p>Core languages and frameworks I build with — bars animate in as you scroll.</p>
+    </div>
+
+    <div class="skills-grid">
+      <div class="skill-row reveal">
+        <div class="skill-top"><span>Data Analysis </span><span>95%</span></div>
+        <div class="skill-bar"><div class="skill-fill" data-level="95"></div></div>
+      </div>
+      <div class="skill-row reveal">
+        <div class="skill-top"><span>Web Development</span><span>85%</span></div>
+        <div class="skill-bar"><div class="skill-fill" data-level="85"></div></div>
+      </div>
+      <div class="skill-row reveal">
+        <div class="skill-top"><span>Deep Learning</span><span>80%</span></div>
+        <div class="skill-bar"><div class="skill-fill" data-level="78"></div></div>
+      </div>
+      <div class="skill-row reveal">
+        <div class="skill-top"><span>Database Management Systems</span><span>70%</span></div>
+        <div class="skill-bar"><div class="skill-fill" data-level="70"></div></div>
+      </div>
+      <div class="skill-row reveal">
+        <div class="skill-top"><span>Data Visualization</span><span>90%</span></div>
+        <div class="skill-bar"><div class="skill-fill" data-level="80"></div></div>
+      </div>
+      <div class="skill-row reveal">
+        <div class="skill-top"><span>Agentics AI</span><span>90%</span></div>
+        <div class="skill-bar"><div class="skill-fill" data-level="90"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TOOLS ================= -->
+<section id="tools">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="tag">Daily Toolkit</span>
+      <h2>Tools I Use</h2>
+      <p>The apps and platforms that get the work out the door.</p>
+    </div>
+
+    <div class="tools-grid">
+      <!-- TOOL-ITEM: add/remove/rename chips freely -->
+      <div class="tool-chip reveal"><div class="tool-icon">🆚</div><span>VS Code</span></div>
+      <div class="tool-chip reveal"><div class="tool-icon">🗄️</div><span>MySQL</span></div>
+      <div class="tool-chip reveal"><div class="tool-icon">🐙</div><span>GitHub</span></div>
+      <div class="tool-chip reveal"><div class="tool-icon">📊</div><span>Power BI</span></div>
+      <div class="tool-chip reveal"><div class="tool-icon">🌐</div><span>Postman</span></div>
+      <div class="tool-chip reveal"><div class="tool-icon">🅰️</div><span>AWS</span></div>
+      <div class="tool-chip reveal"><div class="tool-icon">📊</div><span>Tableau</span></div>
+      <div class="tool-chip reveal"><div class="tool-icon">🅿️</div><span>PyCharm</span></div>
+      <div class="tool-chip reveal"><div class="tool-icon">🛢️</div><span>Mongo DB
+      </span></div>
+      <div class="tool-chip reveal"><div class="tool-icon">🪟</div><span>MS Office</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section id="contact">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="tag">Get In Touch</span>
+      <h2>Connect Me</h2>
+      <p>Have a project in mind or just want to say hi? Fill the form or reach me directly.</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <h3>Let's connect</h3>
+        <p>I'm open to freelance work, internships, and collaboration. Reach out through any of these — or the neon form.</p>
+
+        <div class="info-line">
+          <div class="info-icon">✉</div>
+          <span>pisenamrata98@gmail.com</span>
+        </div>
+        <div class="info-line">
+          <div class="info-icon">📞</div>
+          <span>+91 9511801327</span>
+        </div>
+        <div class="info-line">
+          <div class="info-icon">📍</div>
+          <span>Amravati, Maharashtra</span>
+        </div>
+
+        <!-- SOCIAL-LINKS: replace href="#" below with your real profile URLs -->
+        <div class="social-row">
+          <a href="https://github.com/pisenamrata98-alt" target="_blank" class="social-icon" title="GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.1 3.29 9.42 7.86 10.96.57.1.78-.25.78-.55 0-.27-.01-1-.02-1.96-3.2.7-3.88-1.54-3.88-1.54-.52-1.34-1.28-1.7-1.28-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.72-1.55-2.56-.29-5.26-1.28-5.26-5.7 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.06 11.06 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.8 1.18 1.83 1.18 3.09 0 4.43-2.7 5.4-5.28 5.69.42.36.78 1.07.78 2.16 0 1.56-.01 2.82-.01 3.2 0 .3.2.66.79.55A10.52 10.52 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/namratapatilpise8/" target="_blank" class="social-icon" title="Instagram">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2c3.2 0 3.58.01 4.85.07 1.17.05 1.97.24 2.43.4a4.9 4.9 0 0 1 1.77 1.15 4.9 4.9 0 0 1 1.15 1.77c.16.46.35 1.26.4 2.43.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.24 1.97-.4 2.43a4.9 4.9 0 0 1-1.15 1.77 4.9 4.9 0 0 1-1.77 1.15c-.46.16-1.26.35-2.43.4-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.97-.24-2.43-.4a4.9 4.9 0 0 1-1.77-1.15 4.9 4.9 0 0 1-1.15-1.77c-.16-.46-.35-1.26-.4-2.43C2.21 15.58 2.2 15.2 2.2 12s.01-3.58.07-4.85c.05-1.17.24-1.97.4-2.43A4.9 4.9 0 0 1 3.82 3.05 4.9 4.9 0 0 1 5.59 1.9c.46-.16 1.26-.35 2.43-.4C9.29 1.44 9.67 1.43 12 1.43V2.2zm0 1.98c-3.15 0-3.5.01-4.74.07-.96.04-1.48.2-1.83.34a3 3 0 0 0-1.11.72 3 3 0 0 0-.72 1.11c-.13.35-.3.87-.34 1.83-.06 1.24-.07 1.59-.07 4.74s.01 3.5.07 4.74c.04.96.2 1.48.34 1.83a3 3 0 0 0 .72 1.11 3 3 0 0 0 1.11.72c.35.13.87.3 1.83.34 1.24.06 1.59.07 4.74.07s3.5-.01 4.74-.07c.96-.04 1.48-.2 1.83-.34a3 3 0 0 0 1.11-.72 3 3 0 0 0 .72-1.11c.13-.35.3-.87.34-1.83.06-1.24.07-1.59.07-4.74s-.01-3.5-.07-4.74c-.04-.96-.2-1.48-.34-1.83a3 3 0 0 0-.72-1.11 3 3 0 0 0-1.11-.72c-.35-.13-.87-.3-1.83-.34-1.24-.06-1.59-.07-4.74-.07zm0 3.4a5.42 5.42 0 1 1 0 10.85 5.42 5.42 0 0 1 0-10.85zm0 1.98a3.44 3.44 0 1 0 0 6.89 3.44 3.44 0 0 0 0-6.89zm5.65-2.2a1.27 1.27 0 1 1 0 2.53 1.27 1.27 0 0 1 0-2.53z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/namrata-pise-b3a425276/" target="_blank" class="social-icon" title="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.15 1.45-2.15 2.94v5.67H9.34V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.8 0 0 .78 0 1.75v20.5C0 23.22.8 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.75V1.75C24 .78 23.2 0 22.22 0z"/></svg>
+          </a>
+          <a href="https://mail.google.com/mail/u/0/?hl=en_GB#inbox" target="_blank" class="social-icon" title="Email">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M2 4h20a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1zm10 9L3.2 6h17.6L12 13zM3 8.24V18h18V8.24l-9 6.51-9-6.51z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <form class="neon-form reveal" id="contactForm" onsubmit="handleFormSubmit(event)">
+  <!-- 1. Web3Forms Access Key (Replace with your actual key from Step 1) -->
+  <input type="hidden" name="access_key" value="7614bcb1-3221-4cff-937b-a544bf8fbaf5">
+
+  <!-- 2. Honeypot Spam Protection (Keep hidden from real users) -->
+  <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+  <!-- Form Fields -->
+  <div class="field">
+    <label for="name">NAME</label>
+    <input type="text" id="name" name="name" required placeholder="Enter Your Name">
+  </div>
+
+  <div class="field">
+    <label for="email">EMAIL</label>
+    <input type="email" id="email" name="email" required placeholder="Enter Your Email">
+  </div>
+
+  <div class="field">
+    <label for="subject">WHAT ARE YOU REACHING OUT ABOUT?</label>
+    <input type="text" id="subject" name="subject" required placeholder="e.g. Project inquiry or other">
+  </div>
+
+  <div class="field">
+    <label for="message">MESSAGE</label>
+    <textarea id="message" name="message" required placeholder="Tell me a bit about it..."></textarea>
+  </div>
+
+  <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;">
+    Send Message ✉
+  </button>
+  
+  <div class="form-msg" id="formMsg"></div>
+</form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">🩵 Made By Namrata Pise © 2026 All Rights Reserved.</div>
+</footer>
+
+<button class="back-to-top" id="backToTop" title="Back to top">↑</button>
+
+<!-- ================= AI ASSISTANT WIDGET ================= -->
+<!-- Answers using the knowledge base near the bottom of the <script> —
+     edit the KNOWLEDGE_BASE array there to change what it knows/says. -->
+<button class="ai-toggle" id="aiToggle" title="Ask my assistant">
+  <span class="ping"></span>🤖
+</button>
+
+<div class="ai-panel" id="aiPanel">
+  <div class="ai-head">
+    <div class="ai-head-title"><span class="dot"></span>Namrata's Portfolio Assistant</div>
+    <button class="ai-close" id="aiClose">✕</button>
+  </div>
+  <div class="ai-messages" id="aiMessages"></div>
+  <div class="ai-suggestions" id="aiSuggestions">
+    <button class="ai-chip">Tell me about your projects</button>
+    <button class="ai-chip">What are your skills?</button>
+    <button class="ai-chip">How can I contact you?</button>
+    <button class="ai-chip">Where did you study?</button>
+    <button class="ai-chip">Namrata's certifications?</button>
+  </div>
+  <div class="ai-input-row">
+    <input type="text" id="aiInput" placeholder="Ask me anything about this portfolio...">
+    <button class="ai-send" id="aiSend">➤</button>
+  </div>
+</div>
+
+<script>
+  // ---- mobile nav toggle ----
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+  // ---- scroll reveal ----
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+  }, { threshold: 0.15 });
+  revealEls.forEach(el => io.observe(el));
+
+  // ---- animated skill bars (fill in once visible) ----
+  const skillFills = document.querySelectorAll('.skill-fill');
+  const skillIO = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.width = e.target.dataset.level + '%';
+        skillIO.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.4 });
+  skillFills.forEach(el => skillIO.observe(el));
+
+  // ---- light / dark theme toggle ----
+  // NOTE: choice resets to dark on reload (no browser storage is used here).
+  // If you want it to stick permanently, this is the one place you'd wire
+  // up your own persistence once you host this outside of this preview.
+  const themeToggle = document.getElementById('themeToggle');
+  const htmlEl = document.documentElement;
+  themeToggle.addEventListener('click', () => {
+    const isLight = htmlEl.getAttribute('data-theme') === 'light';
+    htmlEl.setAttribute('data-theme', isLight ? 'dark' : 'light');
+  });
+
+  // ---- scroll progress bar ----
+  const scrollProgress = document.getElementById('scrollProgress');
+  const backToTop = document.getElementById('backToTop');
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    scrollProgress.style.width = pct + '%';
+    backToTop.classList.toggle('show', scrollTop > 500);
+  });
+
+  // ---- back to top ----
+  backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+  // ---- Portfolio Assistant ----
+  // This answers using the info already written on this page — no external
+  // API or key required, so it works the moment you open this file anywhere.
+  // Edit KNOWLEDGE_BASE to change what it knows, or add new entries for
+  // things this portfolio doesn't cover yet.
+  const KNOWLEDGE_BASE = [
+    { keywords: ['education','study','studied','degree','university','college','qualification'],
+      response: "B.Tech in CSE (Artificial Intelligence and Machine Learning) (2024–Present), alongside higher secondary and secondary schooling. Check the Education section above for the full timeline." },
+    { keywords: ['experience','certificate','certifications','work','job','intern','internship','career'],
+      response: "Machine Learning Using Python By Simplilearn, AI-ML Virtual Internship By EduSkill, Full Stack Developer Virtual Internship By EduSkill, Android Developer Virtual Internship By EduSkill, Python Full Stack Developer Virtual Internship By EduSkill, Cybersecurity Analyst Job Simulation By Forage" },
+    { keywords: ['project','projects','built','portfolio','app','website','demo'],
+      response: "I've built a Smart Meter Progress Dashboard, an E-Commerce UI Kit, and an Smart Feedback Portal. Scroll to the Projects section for briefs, screenshots, and live/GitHub links." },
+    { keywords: ['skill','skills','know','good at','proficient'],
+      response: "Data Analysis, Deep Learning, Data Visualization,Web Development,Database Management Systems,Agentics AI — see the Skills section for the breakdown." },
+    { keywords: ['tool','tools','stack','use daily','software'],
+      response: "Day to day I use VS Code, MySQL, GitHub, Power BI, Postman, AWS, Tableu, PyCharm, MongoDB and the MS Office — see the Tools section." },
+    { keywords: ['contact','email','reach','hire','message','connect','talk'],
+      response: "You can reach me at pisenamrata98@gmail.com or through the neon contact form further down this page — I read every message." },
+    { keywords: ['resume','cv','download'],
+      response: "You can download my resume using the button near the top of this page." },
+    { keywords: ['social','instagram','github','linkedin','twitter','x.com','follow'],
+      response: "My GitHub, Instagram, LinkedIn are in the Contact section, next to the contact form." },
+    { keywords: ['hi','hello','hey','yo'],
+      response: "Hey! I'm Namrata's portfolio built-in assistant. Ask me about the education, experience, projects, skills, or contact info on this page." },
+    { keywords: ['who are you','your name','about you'],
+      response: "This is Namrata Pise's personal portfolio — ask me about the background, work, or how to get in touch." }
+  ];
+ 
+function findAnswer(message) {
+  const text = message.toLowerCase();
+  let best = null;
+  let bestScore = 0;
+
+  KNOWLEDGE_BASE.forEach(entry => {
+    let score = 0;
+
+    entry.keywords.forEach(k => {
+      // Convert keyword to lowercase to prevent case-sensitivity bugs
+      if (text.includes(k.toLowerCase())) {
+        score++;
+      }
+    });
+
+    // Pick the entry with the highest keyword match count
+    if (score > bestScore) {
+      bestScore = score;
+      best = entry;
+    }
+  });
+
+  return best ? best.response : FALLBACK_RESPONSE;
+}
+  const aiToggle = document.getElementById('aiToggle');
+  const aiPanel = document.getElementById('aiPanel');
+  const aiClose = document.getElementById('aiClose');
+  const aiMessages = document.getElementById('aiMessages');
+  const aiInput = document.getElementById('aiInput');
+  const aiSend = document.getElementById('aiSend');
+  const aiSuggestions = document.getElementById('aiSuggestions');
+
+  function addMessage(text, sender){
+    const el = document.createElement('div');
+    el.className = 'ai-msg ' + sender;
+    el.textContent = text;
+    aiMessages.appendChild(el);
+    aiMessages.scrollTop = aiMessages.scrollHeight;
+  }
+
+  let aiGreeted = false;
+  aiToggle.addEventListener('click', () => {
+    aiPanel.classList.toggle('open');
+    if (!aiGreeted && aiPanel.classList.contains('open')) {
+      addMessage("Hi! I'm Namrata's Portfolio assistant. Ask me about education, experience, projects, skills, or how to get in touch.", 'bot');
+      aiGreeted = true;
+    }
+  });
+  aiClose.addEventListener('click', () => aiPanel.classList.remove('open'));
+
+  function handleUserMessage(msg){
+    if (!msg.trim()) return;
+    addMessage(msg, 'user');
+    aiInput.value = '';
+    setTimeout(() => addMessage(findAnswer(msg), 'bot'), 350);
+  }
+
+  aiSend.addEventListener('click', () => handleUserMessage(aiInput.value));
+  aiInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') handleUserMessage(aiInput.value); });
+  aiSuggestions.querySelectorAll('.ai-chip').forEach(chip => {
+    chip.addEventListener('click', () => handleUserMessage(chip.textContent));
+  });
+
+  // ---- profile photo (edit from code only — no public upload button) ----
+  // Put your photo online (e.g. imgur, GitHub, your own host) and paste the
+  // URL below. Or, if you keep an image file next to this HTML file, use a
+  // relative path instead, e.g. "images/me.jpg".
+  const PROFILE_PHOTO_URL = "123.jpeg"; // <-- paste your image URL or file path between these quotes
+
+  const avatar = document.getElementById('avatar');
+  const avatarImg = document.getElementById('avatarImg');
+  if (PROFILE_PHOTO_URL) {
+    avatarImg.src = PROFILE_PHOTO_URL;
+    avatar.classList.add('has-photo');
+    avatarImg.style.width = '245px';        // Adjust width as needed
+    avatarImg.style.height = '240px';       // Adjust height as needed
+    avatarImg.style.objectFit = 'cover';   // Prevents image stretching
+    avatarImg.style.borderRadius = '%';  // Makes it circular (optional)
+  }
+
+  // ---- contact form (front-end only demo) ----
+ async function handleFormSubmit(e) {
+  e.preventDefault();
+
+  const form = e.target;
+  const submitBtn = form.querySelector('button[type="submit"]');
+  const msgEl = document.getElementById('formMsg');
+
+  // 1. Convert form inputs to JSON payload
+  const formData = new FormData(form);
+  const object = Object.fromEntries(formData);
+  const json = JSON.stringify(object);
+
+  // 2. Display loading state on the button
+  const originalBtnText = submitBtn.innerHTML;
+  submitBtn.innerHTML = 'Sending... ⏳';
+  submitBtn.disabled = true;
+  msgEl.textContent = '';
+
+  try {
+    // 3. Send request to Web3Forms API
+    const response = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: json
+    });
+
+    const result = await response.json();
+
+    if (response.status === 200) {
+      msgEl.style.color = '#00f3ff'; // Success color
+      msgEl.textContent = 'Thank you! Your message has been sent successfully. ✉';
+      form.reset();
+    } else {
+      msgEl.style.color = '#ff007f'; // Error color
+      msgEl.textContent = result.message || 'Something went wrong. Please try again.';
+    }
+  } catch (error) {
+    console.error('Error submitting form:', error);
+    msgEl.style.color = '#ff007f';
+    msgEl.textContent = 'Network error. Please check your connection and try again.';
+  } finally {
+    // 4. Restore submit button state
+    submitBtn.innerHTML = originalBtnText;
+    submitBtn.disabled = false;
+    setTimeout(() => { msgEl.textContent = ''; }, 6000);
+  }
+}
+{
+    // This demo just confirms in-page. To actually receive messages, connect
+    // this form to a service like Formspree, EmailJS, or your own backend,
+    // or swap the button for a mailto: link.
+    
+    form.reset();
+  };
+</script>
+
+</body>
+</html>
